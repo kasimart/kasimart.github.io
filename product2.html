@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="images.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasimart. - E-commerce made easy</title>
+    <style>
+        /* Reset and base styles for simplicity and editability */
+        a {
+            text-decoration: none;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff; /* White background for brightness */
+            font-family: 'Berlin Sans FB', sans-serif; /* Fallback font included */
+            text-decoration: none;
+        }
+
+        /* Header: Bright and vibrant with space */
+        header {
+            background: linear-gradient(90deg, rgba(37, 84, 21, 1) 0%, rgba(54, 163, 74, 1) 50%, rgba(255, 237, 79, 1) 100%); /* Vibrant gradient */
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero section: Full-width with space and vibrant image placeholder */
+        .hero {
+            background: linear-gradient(135deg, #a8e6cf, #ffd93d); /* Bright gradient */
+            text-align: center;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 2rem auto; /* Space around image */
+            display: block;
+        }
+
+        /* Products section: Grid with ample space around images */
+        .products {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff6b6b; /* Vibrant color */
+            margin-bottom: 3rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem; /* Ample space between products */
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card1 {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: 250px; /* Fixed height for consistency */
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem; /* Space below image */
+            display: block;
+            margin-left: auto;
+            margin-right: auto; /* Center image with space */
+        }
+
+        .products-grid img{
+            border-radius: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            color: #276113; /* Vibrant teal */
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+        }
+
+        .product-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            color: #ff6b6b; /* Vibrant red for price */
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .buy-btn {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d); /* Vibrant button */
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(135deg, #44a08d, #4ecdc4);
+        }
+
+        /* Footer: Simple and bright */
+        footer {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive design for mobile: Keep simple */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+        
+            .product-card {
+                padding: 1.5rem;
+            }
+        }
+        @font-face {
+        font-family: 'Berlin Sans FB'; /* Choose a name for your font */
+        src: local('BRLNSR.TTF'), /* Optional: Check if font is locally installed */
+                url('BRLNSR.TTF') format('ttf'),
+    }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1><img src="logo.png"></h1>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="homepage.html#products">Products</a></li>
+                <li><a href="homepage.html#about">About</a></li>
+                <li><a href="homepage.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2>Mor Deep</h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <table align="center" >
+                    <tr>
+                        <td><img src="2.2.JPG" width="500"></td>
+                        <td rowspan="2"><img src="2.23.JPG" width="500" height="670"></td>
+                    </tr>
+                    <tr><td><img src="2.22.JPG" width="500"></td></tr>
+                </table>
+                <p>5 diyas on top of a peacock, embracing tradition and the beauty of the majestic bird.</p>
+                <div class="price">₹500/-</div>
+                <a href="buypage.html"><button class="buy-btn">Buy now</button></a>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2025 Kasiga Business Exhbition Shop. All rights reserved. | Email: aadityakasiga@gmail.com </p>
+    </footer>
+
+    <!-- Simple JS for interactivity (optional, easy to edit or remove) -->
+    <script>
+        // You can add more JS here, e.g., for a real cart. This is just a demo alert.
+        console.log('Vibrant Shop loaded! Edit this script for custom functionality.');
+    </script>
+</body>
+</html>
